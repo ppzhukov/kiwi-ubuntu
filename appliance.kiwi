@@ -2,7 +2,6 @@
 <!-- OBS-Profiles: @BUILD_FLAVOR@ -->
 <!DOCTYPE image [
     <!ENTITY root_password "linux">
-    <!ENTITY ubuntu_mirror "obs://Ubuntu:22.04/universe">
 ]>
 <image schemaversion="7.6" name="Ubuntu-22.04_appliance">
     <description type="system">
@@ -44,13 +43,13 @@
         <user password="&root_password;" home="/root" name="root" groups="root" pwdformat="plane"/>
     </users>
     <repository type="apt-deb" alias="Jammy-security" distribution="jammy-security" components="main restricted universe" repository_gpgcheck="false">
-        <source path="&ubuntu_mirror;"/>
+        <source path="obs://Ubuntu:22.04/universe"/>
     </repository>
     <repository type="apt-deb" alias="Jammy-updates" distribution="jammy-updates" components="main restricted universe" repository_gpgcheck="false">
-        <source path="&ubuntu_mirror;"/>
+        <source path="obs://Ubuntu:22.04/universe"/>
     </repository>
     <repository type="apt-deb" alias="Jammy" distribution="jammy" components="main restricted universe" repository_gpgcheck="false">
-        <source path="&ubuntu_mirror;"/>
+        <source path="obs://Ubuntu:22.04/universe"/>
     </repository>
 
     <packages type="image">
