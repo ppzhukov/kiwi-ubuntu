@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE image [
+    <!ENTITY root_password "linux">
+	<!ENTITY ubuntu_mirror "obs://Ubuntu:22.04/universe">
+]>
+<image schemaversion="7.6" name="Ubuntu-22.04_appliance">
+    <description type="system">
+        <author>Pavel Zhukov</author>
+        <contact>ppzhukov@google.com</contact>
+        <specification>Image description for Ubuntu 22.04</specification>
+    </description>
+    <profiles>
+        <profile name="Hyper-V" description="Hyper-V vhdx"/>
+        <profile name="OpenStack" description="OpenStack qcow2"/>
+    </profiles>
+    <preferences>
+        <version>0.0.1</version>
+        <packagemanager>apt</packagemanager>
+        <bootsplash-theme>sabily</bootsplash-theme>
+        <bootloader-theme>ubuntu-mate</bootloader-theme>
+        <locale>en_US</locale>
+        <keytable>us</keytable>
+        <timezone>Europe/Moscow</timezone>
+        <rpm-check-signatures>false</rpm-check-signatures>
+    </preferences>
+    <preferences profiles="Hyper-V">
+        <type image="oem" filesystem="ext4" kernelcmdline="console=ttyS0,115200n8 console=tty0" firmware="uefi" format="vhdx">
+            <oemconfig>
+                <oem-resize>false</oem-resize>
+            </oemconfig>
+            <bootloader name="grub2" timeout="2"/>
+        </type>
+    </preferences>
+    <preferences profiles="OpenStack">
+        <type image="oem" filesystem="ext4" kernelcmdline="console=ttyS0,115200n8 console=tty0" firmware="uefi" format="qcow2">
+            <oemconfig>
+                <oem-resize>false</oem-resize>
+            </oemconfig>
+            <bootloader name="grub2" timeout="2"/>
+        </type>
+    </preferences>
+    <users>
+        <user password="&root_password;" home="/root" name="root" groups="root" pwdformat="plane"/>
+    </users>
+    <repository type="apt-deb" alias="Jammy-security" distribution="jammy-security" components="main restricted universe" repository_gpgcheck="false">
+        <source path="&ubuntu_mirror;"/>
+    </repository>
+    <repository type="apt-deb" alias="Jammy-updates" distribution="jammy-updates" components="main restricted universe" repository_gpgcheck="false">
+        <source path="&ubuntu_mirror;"/>
+    </repository>
+    <repository type="apt-deb" alias="Jammy" distribution="jammy" components="main restricted universe" repository_gpgcheck="false">
+        <source path="&ubuntu_mirror;"/>
+    </repository>
+
+    <packages type="image">
+        <package name="grub2-themes-ubuntu-mate"/>
+        <package name="plymouth-theme-sabily"/>
+        <package name="plymouth"/>
+        <package name="grub-efi-amd64"/>
+        <package name="grub-common"/>
+        <package name="grub2-common"/>
+        <package name="grub-pc-bin"/>
+        <package name="linux-generic"/>
+        <package name="isolinux"/>
+        <package name="syslinux"/>
+        <package name="syslinux-common"/>
+        <package name="systemd"/>
+        <package name="dracut"/>
+        <package name="init"/>
+        <package name="gnupg"/>
+        <package name="iproute2"/>
+        <package name="iptables"/>
+        <package name="iputils-ping"/>
+        <package name="ifupdown"/>
+        <package name="isc-dhcp-client"/>
+        <package name="netbase"/>
+        <package name="dbus"/>
+        <package name="xz-utils"/>
+        <package name="btrfs-progs"/>
+        <package name="shim"/>
+        <package name="shim-signed"/>
+        <!-- P. Zhukov -->
+        <package name="cloud-guest-utils"/>
+        <package name="openssh-server"/>
+        <package name="firewalld"/>
+        <package name="python3"/>  
+        <package name="sudo"/> 
+        <package name="systemd"/>    
+	    <!-- End P. Zhukov -->
+    </packages>
+    <packages type="image" profiles="Hyper-V">
+        <package name="linux-virtual"/>
+        <package name="linux-cloud-tools-virtual"/>
+        <package name="linux-tools-virtual"/>
+    </packages>
+    <packages type="image" profiles="OpenStack">
+        <package name="cloud-init"/>
+        <package name="linux-cloud-tools-virtual"/>
+    </packages>
+    <packages type="bootstrap">
+        <package name="usrmerge"/>
+        <package name="ca-certificates"/>
+        <package name="systemd"/>
+    </packages>
+</image>
