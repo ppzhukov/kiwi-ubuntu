@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- OBS-Profiles: @BUILD_FLAVOR@ -->
 <!DOCTYPE image [
     <!ENTITY root_password "linux">
     <!ENTITY ubuntu_mirror "obs://Ubuntu:22.04/universe">
