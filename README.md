@@ -1,2 +1,2 @@
 # kiwi-ubuntu
-Custom Ubuntu for project
+Custom Ubuntu images
