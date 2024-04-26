@@ -42,16 +42,15 @@
     <users>
         <user password="&root_password;" home="/root" name="root" groups="root" pwdformat="plane"/>
     </users>
-    <repository type="apt-deb" alias="Jammy-security" distribution="jammy-security" components="main restricted universe" repository_gpgcheck="false">
-        <source path="obs://Ubuntu:22.04/universe"/>
-    </repository>
-    <repository type="apt-deb" alias="Jammy-updates" distribution="jammy-updates" components="main restricted universe" repository_gpgcheck="false">
-        <source path="obs://Ubuntu:22.04/universe"/>
+    <repository type="apt-deb" alias="kiwi-next-generation" priority="1" repository_gpgcheck="false">
+        <source path="obs://Virtualization:Appliances:Staging/xUbuntu_22.04"/>
     </repository>
     <repository type="apt-deb" alias="Jammy" distribution="jammy" components="main restricted universe" repository_gpgcheck="false">
+        <source path="obs://Ubuntu:22.04/standard"/>
+    </repository>
+    <repository type="apt-deb" alias="Jammy-Universe" distribution="jammy" components="main restricted universe" repository_gpgcheck="false">
         <source path="obs://Ubuntu:22.04/universe"/>
     </repository>
-
     <packages type="image">
         <package name="grub2-themes-ubuntu-mate"/>
         <package name="plymouth-theme-sabily"/>
