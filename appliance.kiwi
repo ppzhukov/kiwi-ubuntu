@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE image [
     <!ENTITY root_password "linux">
-	<!ENTITY ubuntu_mirror "obs://Ubuntu:22.04/universe">
+    <!ENTITY ubuntu_mirror "obs://Ubuntu:22.04/universe">
 ]>
 <image schemaversion="7.6" name="Ubuntu-22.04_appliance">
     <description type="system">
