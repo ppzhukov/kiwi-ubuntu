@@ -51,52 +51,6 @@
     </repository>
     <packages type="image">
         <package name="grub2-themes-ubuntu-mate"/>
-        <package name="plymouth-theme-sabily"/>
-        <package name="plymouth"/>
-        <package name="grub-efi-amd64"/>
-        <package name="grub-common"/>
-        <package name="grub2-common"/>
-        <package name="grub-pc-bin"/>
-        <package name="linux-generic"/>
-        <package name="isolinux"/>
-        <package name="syslinux"/>
-        <package name="syslinux-common"/>
-        <package name="systemd"/>
-        <package name="dracut"/>
-        <package name="init"/>
-        <package name="gnupg"/>
-        <package name="iproute2"/>
-        <package name="iptables"/>
-        <package name="iputils-ping"/>
-        <package name="ifupdown"/>
-        <package name="isc-dhcp-client"/>
-        <package name="netbase"/>
-        <package name="dbus"/>
-        <package name="xz-utils"/>
-        <package name="btrfs-progs"/>
-        <package name="shim"/>
-        <package name="shim-signed"/>
-        <!-- P. Zhukov -->
-        <package name="cloud-guest-utils"/>
-        <package name="openssh-server"/>
-        <package name="firewalld"/>
-        <package name="python3"/>  
-        <package name="sudo"/> 
-        <package name="systemd"/>    
-	    <!-- End P. Zhukov -->
     </packages>
-    <packages type="image" profiles="Hyper-V">
-        <package name="linux-virtual"/>
-        <package name="linux-cloud-tools-virtual"/>
-        <package name="linux-tools-virtual"/>
-    </packages>
-    <packages type="image" profiles="OpenStack">
-        <package name="cloud-init"/>
-        <package name="linux-cloud-tools-virtual"/>
-    </packages>
-    <packages type="bootstrap">
-        <package name="usrmerge"/>
-        <package name="ca-certificates"/>
-        <package name="systemd"/>
-    </packages>
+
 </image>
