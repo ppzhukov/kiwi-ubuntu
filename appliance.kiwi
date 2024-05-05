@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- OBS-Profiles: @BUILD_FLAVOR@ -->
-<!DOCTYPE image [
-    <!ENTITY root_password "linux">
-]>
+<!-- OBS-Milestone: %current_milestone -->
 <image schemaversion="7.6" name="Ubuntu-22.04_appliance">
     <description type="system">
         <author>Pavel Zhukov</author>
@@ -40,7 +38,7 @@
         </type>
     </preferences>
     <users>
-        <user password="&root_password;" home="/root" name="root" groups="root" pwdformat="plane"/>
+        <user password="linux" home="/root" name="root" groups="root" pwdformat="plane"/>
     </users>
 <repository type="apt-deb" alias="kiwi-next-generation" priority="1" repository_gpgcheck="false">
         <source path="obs://Virtualization:Appliances:Staging/xUbuntu_23.04"/>
