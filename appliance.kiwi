@@ -40,8 +40,9 @@
     <users>
         <user password="linux" home="/root" name="root" groups="root" pwdformat="plane"/>
     </users>
-<repository type="apt-deb" alias="kiwi-next-generation" priority="1" repository_gpgcheck="false">
+    <repository type="apt-deb" alias="kiwi-next-generation" priority="1" repository_gpgcheck="false">
         <source path="obs://Virtualization:Appliances:Staging/xUbuntu_23.04"/>
+    </repository>
     <repository type="apt-deb" alias="Jammy" distribution="jammy" components="main restricted universe" repository_gpgcheck="false">
         <source path="obs://Ubuntu:22.04/standard"/>
     </repository>
